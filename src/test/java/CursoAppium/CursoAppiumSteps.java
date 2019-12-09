@@ -10,7 +10,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.Assert;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class CursoAppiumSteps {
 
@@ -31,6 +31,12 @@ public class CursoAppiumSteps {
         driver.findElement(curso.getSelect()).click();
         driver.findElement(curso.getSelectPS4()).click();
         assertEquals("Verify console","PS4",driver.findElement(curso.getVirifySelect()).getText());
+
+        //Checkbok e Suitch
+        driver.findElement(curso.getCheckbox()).click();
+        driver.findElement(curso.getSwitc()).click();
+        assertTrue("CheckBox",driver.findElement(curso.getCheckbox()).getAttribute("checked").equals("true"));
+        assertFalse("CheckBox",driver.findElement(curso.getSwitc()).getAttribute("checked").equals("true"));
     }
 
     @Given("^Combo$")

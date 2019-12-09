@@ -11,13 +11,13 @@ import java.util.Date;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/CursoAppium/CursoAppium.feature",
-        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber.json"},
+        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber.json","junit:target/cucumber.json"},
         monochrome = true,
         snippets = SnippetType.CAMELCASE,
         dryRun = false,
         strict = true)
 
-public class MainCursoAppiumSteps {
+public class MainCursoAppium {
     @BeforeClass
     public static void beforeClass() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss");
